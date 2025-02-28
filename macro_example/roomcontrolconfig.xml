@@ -1,0 +1,209 @@
+<Extensions>
+  <Version>1.11</Version>
+  <Panel>
+    <Order>1</Order>
+    <PanelId>root_directory</PanelId>
+    <Location>HomeScreenAndCallControls</Location>
+    <Icon>Lightbulb</Icon>
+    <Color>#6F739E</Color>
+    <Name>Home Directory</Name>
+    <ActivityType>Custom</ActivityType>
+    <Page>
+      <Name>Main Menu</Name>
+      <Row>
+        <Name/>
+        <Widget>
+          <WidgetId>go_to_tech_admins</WidgetId>
+          <Name>Tech Admins</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>go_to_project_contacts</WidgetId>
+          <Name>Project Contacts</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>widget_1</WidgetId>
+          <Name>CDW Contacts</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <PageId>root_directory</PageId>
+      <Options>hideRowNames=1</Options>
+    </Page>
+  </Panel>
+  <Panel>
+    <Order>2</Order>
+    <PanelId>tech_admins</PanelId>
+    <Location>HomeScreen</Location>
+    <Icon>Lightbulb</Icon>
+    <Name>Tech Admins</Name>
+    <ActivityType>Custom</ActivityType>
+    <Page>
+      <Name>Tech Admins</Name>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_Sarah_Mayberry</WidgetId>
+          <Name>Sarah Mayberry - Media Services</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_Joshua_Moneypenny</WidgetId>
+          <Name>Joshua Moneypenny - Director</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_Monica_Radcliff</WidgetId>
+          <Name>Monica Radcliff - Instructional Tech</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>root_directory</WidgetId>
+          <Name>Go Back</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+      </Row>
+      <Options>hideRowNames=1</Options>
+    </Page>
+  </Panel>
+  <Panel>
+    <Order>3</Order>
+    <PanelId>project_contacts</PanelId>
+    <Location>HomeScreen</Location>
+    <Icon>Lightbulb</Icon>
+    <Name>Project Contacts</Name>
+    <ActivityType>Custom</ActivityType>
+    <Page>
+      <Name>Project Contacts</Name>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_carlos_Madera</WidgetId>
+          <Name>Carlos Madera</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_Joseph_Taylor</WidgetId>
+          <Name>Joseph Taylor </Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>root_directory</WidgetId>
+          <Name>Go Back</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+      </Row>
+      <Options>hideRowNames=1</Options>
+    </Page>
+  </Panel>
+  <Panel>
+    <Order>4</Order>
+    <PanelId>cdw_contacts</PanelId>
+    <Location>HomeScreen</Location>
+    <Icon>Lightbulb</Icon>
+    <Name>CDW Contacts</Name>
+    <ActivityType>Custom</ActivityType>
+    <Page>
+      <Name>CDW Contacts</Name>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_Breannan_Geis</WidgetId>
+          <Name>Brennan Geis</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_Mike_Robinson</WidgetId>
+          <Name>Mike Robinson</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>dial_Aubrey_England</WidgetId>
+          <Name>Aubrey England</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>root_directory</WidgetId>
+          <Name>Go Back</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+      </Row>
+      <Options>hideRowNames=1</Options>
+    </Page>
+  </Panel>
+</Extensions>

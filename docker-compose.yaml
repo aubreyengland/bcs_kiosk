@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  contact-kiosk:
+    container_name: bcs_kiosk
+    build: .
+    ports:
+      - "5050:5050"
+    restart: always
+    environment:
+      - FLASK_ENV=production

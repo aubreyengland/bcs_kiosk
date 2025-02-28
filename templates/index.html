@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Kiosk</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        button { padding: 20px; margin: 20px; font-size: 16px; }
+        #contacts { margin-top: 40px; }
+        a { display: block; margin: 10px; font-size: 24px; text-decoration: none; color: red; }
+    </style>
+</head>
+<body>
+    <h1>Bibb County Schools Directory</h1>
+    <h2>Choose a contact group and tap to call!</h2>    
+
+    <!-- Navigation Buttons -->
+    <button onclick="loadContacts('tech_admins')">Tech Admins</button>
+    <button onclick="loadContacts('project_contacts')">Project Contacts</button>
+    <button onclick="loadContacts('cdw_contacts')">CDW Contacts</button>
+
+    <!-- Contacts List -->
+    <div id="contacts"></div>
+
+    <script>
+        async function loadContacts(group) {
+            const response = await fetch(`/api/contacts/${group}`);
+            const contacts = await response.json();
+            const contactDiv = document.getElementById("contacts");
+            contactDiv.innerHTML = ""; // Clear previous contacts
+
+            contacts.forEach(contact => {
+                const link = document.createElement("a");
+                link.href = `sip:${contact.email}`;
+                link.innerText = `${contact.name}, ${contact.contact_title}`;
+                link.style.color = 'green';
+                contactDiv.appendChild(link);
+            });
+        }
+    </script>
+</body>
+</html>
