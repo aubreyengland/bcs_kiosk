@@ -1,0 +1,38 @@
+{
+  "cdw_contacts": [
+    {
+      "name": "Aubrey England",
+      "title": "That's me!",
+      "email": "aubrey.england@cdw.com"
+    },
+    {
+      "name": "Mike Robinson",
+      "title": "CEO",
+      "email": "mike.robinson@cdw.com"
+    },
+    {
+      "name": "Brennan Geis",
+      "title": "CFO",
+      "email": "brennan.geis@cdw.com"
+    }
+  ],
+  "new_contacts": [
+    {
+      "name": "Carlos Madera",
+      "title": "Title 1",
+      "email": "carlos.madera@bcsdk12.net"
+    },
+    {
+      "name": "Joseph Taylor",
+      "title": "Title 2",
+      "email": "joseph.taylor@bcsdk12.net"
+    }
+  ],
+  "new_group": [
+    {
+      "name": "New User",
+      "title": "Hello",
+      "email": "email@email.com"
+    }
+  ]
+}

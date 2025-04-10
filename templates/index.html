@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="100">
     <title>Contact Kiosk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
     <style>
+        h1, h2 {
+        letter-spacing: 0.05em;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Jost', sans-serif;
             text-align: center;
-            background-color: #2E2E2E; /* Dark Grey */
-            color: white; /* Ensure text is visible */
+            background-color: #f0f0f0; /* Dark Grey */
+            color: black; /* Ensure text is visible */
         }
 
         button {
             padding: 10px;
             margin: 10px;
             font-size: 16px;
-            background-color: #444; /* Darker Grey Buttons */
-            color: white;
+            font-family: 'Jost', sans-serif;
+            background-color:rgb(255, 255, 255); /* Darker Grey Buttons */
+            color: black;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s; /* Add transition for smooth hover effect */
         }
 
         button:hover {
-            background-color: #555; /* Slightly lighter grey on hover */
+            background-color: #cccccc; /* Slightly lighter grey on hover */
         }
 
         a {
@@ -32,27 +39,59 @@
             margin: 10px;
             font-size: 18px;
             text-decoration: none;
-            color: #00bfff; /* Light blue for contrast */
+            color:rgb(193, 205, 61); /* BCS Yellow */
         }
 
         a:hover {
-            color: #1e90ff; /* Brighter blue */
+            color:rgb(193, 205, 61); /* BCS Yellow */ /* Added missing semicolon */
+            text-decoration: underline; /* Add underline on hover for better visibility */
+        }
+
+        #contacts a {
+            background-color:rgb(255, 255, 255);
+            padding: 20px;
+            margin: 10px auto;
+            width: 60%;
+            border-radius: 5px;
+            display: block;
+            color: #003366;
+            text-decoration: none; /* Ensure links are not underlined by default */
+        }
+
+        #contacts a:hover {
+            background-color: #d0d0d0; /* Added missing semicolon */
+            color: #001f4d; /* Added missing semicolon */
         }
     </style>
 </head>
-<body>
-    <h1>Bibb County Schools Directory</h1>
+<body class="bg-dark" style="font-family: 'Jost', sans-serif;">
+    <img src="/static/bcs_logo.svg" alt="Bibb County Schools Logo" style="width: 450px; margin: 50px auto; display: block;">
+    <h1>Directory Kiosk</h1>
     <h2>Choose a contact group and tap to call!</h2>    
 
     <!-- Navigation Buttons -->
-    <button onclick="loadContacts('tech_admins')">Tech Admins</button>
-    <button onclick="loadContacts('project_contacts')">Project Contacts</button>
-    <button onclick="loadContacts('cdw_contacts')">CDW Contacts</button>
+    <div id="group-banner" style="background-color: black; padding: 10px 0;">
+        <div id="group-buttons" style="display: flex; justify-content: center; flex-wrap: wrap;"></div>
+    </div>
 
     <!-- Contacts List -->
     <div id="contacts"></div>
 
     <script>
+        async function fetchGroups() {
+            const response = await fetch('/api/groups');
+            const groups = await response.json();
+            const groupDiv = document.getElementById('group-buttons');
+            groupDiv.innerHTML = '';
+
+            groups.forEach(group => {
+                const btn = document.createElement("button");
+                btn.innerText = group.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                btn.onclick = () => loadContacts(group);
+                groupDiv.appendChild(btn);
+            });
+        }
+
         async function loadContacts(group) {
             const response = await fetch(`/api/contacts/${group}`);
             const contacts = await response.json();
@@ -62,11 +101,13 @@
             contacts.forEach(contact => {
                 const link = document.createElement("a");
                 link.href = `sip:${contact.email}`;
-                link.innerText = `${contact.name}, ${contact.contact_title}`;
-                link.style.color = 'green';
+                link.innerText = `${contact.name}, ${contact.title}, ${contact.email}`;
                 contactDiv.appendChild(link);
             });
         }
+
+        // Load buttons on page load
+        fetchGroups();
     </script>
 </body>
 </html>

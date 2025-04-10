@@ -9,3 +9,5 @@ services:
     restart: always
     environment:
       - FLASK_ENV=production
+    volumes:
+      - ./contacts.json:/app/contacts.json
